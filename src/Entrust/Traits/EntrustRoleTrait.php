@@ -109,8 +109,11 @@ trait EntrustRoleTrait
      *
      * @return bool
      */
-    public function hasPermission($name, $requireAll = false)
+    public function hasPermission($name, $requireAll = false, $adminHasAllPermissions = false, $adminRoleName = 'admin')
     {
+        if ($adminHasAllPermissions) {
+            if ($this->hasRole($adminRoleName)) return true;
+        }
         if (is_array($name)) {
             foreach ($name as $permissionName) {
                 $hasPermission = $this->hasPermission($permissionName);
