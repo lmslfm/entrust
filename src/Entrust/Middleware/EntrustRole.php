@@ -1,11 +1,11 @@
-<?php namespace Trebol\Entrust\Middleware;
+<?php namespace Lmslfm\Entrust\Middleware;
 
 /**
  * This file is part of Entrust,
  * a role & permission management solution for Laravel.
  *
  * @license MIT
- * @package Trebol\Entrust
+ * @package Lmslfm\Entrust
  */
 
 use Closure;

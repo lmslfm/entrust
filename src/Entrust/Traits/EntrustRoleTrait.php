@@ -1,11 +1,11 @@
-<?php namespace Trebol\Entrust\Traits;
+<?php namespace Lmslfm\Entrust\Traits;
 
 /**
  * This file is part of Entrust,
  * a role & permission management solution for Laravel.
  *
  * @license MIT
- * @package Trebol\Entrust
+ * @package Lmslfm\Entrust
  */
 
 use Illuminate\Cache\TaggableStore;

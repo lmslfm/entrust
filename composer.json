@@ -1,12 +1,12 @@
 {
-    "name": "trebol/entrust",
-    "description": "This package provides a flexible way to add role-based permissions to Laravel and is a fork from Zizaco/entrust",
+    "name": "Lmslfm/entrust",
+    "description": "This package provides a flexible way to add role-based permissions to Laravel and is a fork from trebol/entrust from Zizaco/entrust",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Jorge Romero",
-            "email": "jromero@trebolcolombia.com"
+            "name": "Ebrahim Bashirpour",
+            "email": "contact@ebashirpour.com"
         }
     ],
     "minimum-stability": "dev",
@@ -26,16 +26,16 @@
             "src/commands"
         ],
         "psr-4": {
-            "Trebol\\Entrust\\": "src/Entrust/"
+            "Lmslfm\\Entrust\\": "src/Entrust/"
         }
     },
     "extra":{
         "laravel":{
             "providers":[
-                "Trebol\\Entrust\\EntrustServiceProvider"
+                "Lmslfm\\Entrust\\EntrustServiceProvider"
             ],
             "aliases":{
-                "Entrust": "Trebol\\Entrust\\EntrustFacade"
+                "Entrust": "Lmslfm\\Entrust\\EntrustFacade"
             }
         }
     },
