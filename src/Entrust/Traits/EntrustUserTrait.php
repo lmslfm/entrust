@@ -137,13 +137,17 @@ trait EntrustUserTrait
     /**
      * Check if user has a permission by its name.
      *
-     * @param string|array $permission Permission string or array of permissions.
-     * @param bool         $requireAll All permissions in the array are required.
+     * @param string|array $permission  Permission string or array of permissions.
+     * @param bool         $requireAll  All permissions in the array are required.
+     * @param bool         $adminHasAllPermissions  If true, the user with admn rule have all permissions
+     * @param string|array $adminRoleName   The name of admin role
      *
      * @return bool
      */
-    public function cans($permission, $requireAll = false)
+    public function cans($permission, $requireAll = false, $adminHasAllPermissions = false, $adminRoleName = 'admin')
     {
+        if ($adminHasAllPermissions && $this->hasRole($adminRoleName))
+            return true;
         if (is_array($permission)) {
             foreach ($permission as $permName) {
                 $hasPerm = $this->cans($permName);
