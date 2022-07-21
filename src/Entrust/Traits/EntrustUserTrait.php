@@ -144,7 +144,10 @@ trait EntrustUserTrait
      *
      * @return bool
      */
-    public function cans($permission, $requireAll = false, $adminHasAllPermissions = false, $adminRoleName = 'admin')
+    public function cans($permission, $requireAll = false,
+    $adminHasAllPermissions = Config::get('entrust.admin_has_all_permissions', false),
+    $adminRoleName = Config::get('entrust.admin_role_name', 'admin')
+    )
     {
         if ($adminHasAllPermissions && $this->hasRole($adminRoleName))
             return true;

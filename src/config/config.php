@@ -132,4 +132,21 @@ return [
 
     'type' => 'web',
     'response-error' => 'Unauthorized'
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | Some advances option
+    |--------------------------------------------------------------------------
+    |
+    | This options, added on lmslfm/entrust fork's
+    | The description of each options will be placed top of option.
+    |
+    */
+
+    // If this option set to true, if admin user also with specific role, will have all permission
+    // when calling method (cans),
+    // But, you can pass directly to that method if you want let admin all permissions or not
+    'admin_has_all_permissions' => false, 
+    'admin_role_name' => 'admin'
 ];
