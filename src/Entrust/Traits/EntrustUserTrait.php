@@ -139,16 +139,16 @@ trait EntrustUserTrait
      *
      * @param string|array $permission  Permission string or array of permissions.
      * @param bool         $requireAll  All permissions in the array are required.
-     * @param bool         $adminHasAllPermissions  If true, the user with admn rule have all permissions
-     * @param string|array $adminRoleName   The name of admin role
+     * @param bool|NULL    $adminHasAllPermissions  If true, the user with admn rule have all permissions. If it is null, package will read entrust config file.
+     * @param string|NULL  $adminRoleName   The name of admin role, If it is null, package will read entrust config file.
      *
      * @return bool
      */
     public function cans($permission, $requireAll = false,
-    $adminHasAllPermissions = Config::get('entrust.admin_has_all_permissions', false),
-    $adminRoleName = Config::get('entrust.admin_role_name', 'admin')
-    )
+    $adminHasAllPermissions = null,$adminRoleName = null)
     {
+        if ($adminHasAllPermissions === null) $adminHasAllPermissions = Config::get('entrust.admin_has_all_permissions', false);
+        if ($adminRoleName === null) $adminRoleName = Config::get('entrust.admin_role_name', 'admin');
         if ($adminHasAllPermissions && $this->hasRole($adminRoleName))
             return true;
         if (is_array($permission)) {
