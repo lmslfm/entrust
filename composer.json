@@ -44,9 +44,4 @@
             "tests/Middleware/MiddlewareTest.php"
         ]
     },
-    "config": {
-        "platform": {
-            "php": "^7.3 | ^8.1"
-        }
-    }
 }
